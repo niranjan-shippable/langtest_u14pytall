@@ -1,0 +1,18 @@
+language: python
+
+python:
+  - 2.7
+  - 3.4
+  - 3.5
+  - 3.6
+  - pypy
+  - pypy3
+  
+build:
+  pre_ci_boot:
+    image_name: drydock/u14pytall
+    image_tag: master
+    pull: true
+    
+  ci:
+    - python --version
