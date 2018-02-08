@@ -18,9 +18,15 @@ build:
 
   ci:
     - pip install -r requirements.txt
+    - export CACHE_DIR_TMP=cache_timestamp_output
+    - cat $CACHE_DIR_TMP/tmp.txt || true
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - coverage xml -o shippable/codecoverage/coverage.xml
+    - mkdir -p $CACHE_DIR_TMP
+    - touch date > $CACHE_DIR_TMP/tmp.txt
 
-    
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/cache_timestamp_output #test against shippable.yml and dummy directory 
