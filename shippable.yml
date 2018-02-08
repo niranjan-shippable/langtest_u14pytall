@@ -23,7 +23,7 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-    - coverage xml -o shippable/codecoverage/coverage.xml
+    #- coverage xml -o shippable/codecoverage/coverage.xml
     - mkdir -p $CACHE_DIR_TMP
     - touch date > $CACHE_DIR_TMP/tmp.txt
 
