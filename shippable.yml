@@ -11,7 +11,7 @@ build:
     options: "--net=host"
 
   ci:
-    - apt-get install python-pip python
+    - apt-get install -yy python-pip python
     - pip install -r requirements.txt
     - export CACHE_DIR_TMP=cache_timestamp_output
     - cat $CACHE_DIR_TMP/tmp.txt || true
