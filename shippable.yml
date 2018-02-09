@@ -5,18 +5,18 @@ python:
  
 build:
   pre_ci_boot:
-    image_name: drydock/u14pytall
-    image_tag: master
-    pull: true
-    options: "--net=host"
-    
-    #image_name: ubuntu
-    #image_tag: trusty
+    #image_name: drydock/u14pytall
+    #image_tag: master
     #pull: true
     #options: "--net=host"
+    
+    image_name: ubuntu
+    image_tag: trusty
+    pull: true
+    options: "--net=host"
 
   ci:
-    #- apt-get install -yy python-pip python curl
+    - apt-get install -yy python-pip python curl
     - pip install -r requirements.txt
     - export CACHE_DIR_TMP=cache_timestamp_output
     - cat $CACHE_DIR_TMP/tmp.txt || true
