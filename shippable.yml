@@ -10,8 +10,8 @@ build:
     #pull: true
     #options: "--net=host"
     
-    image_name: centos
-    image_tag: centos7
+    image_name: czhujer/shippable-c6base
+    image_tag: v1.1
     #pull: true
     # options: "--net=host"
     
