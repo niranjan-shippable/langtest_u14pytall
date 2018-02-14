@@ -21,7 +21,8 @@ build:
     #options: "--net=host"
 
   ci:
-    - yum install -yy python-pip
+    - yum update
+    - yum -y install python-pip
     - pip install -r requirements.txt
     - export CACHE_DIR_TMP=cache_timestamp_output
     - cat $CACHE_DIR_TMP/tmp.txt || true
