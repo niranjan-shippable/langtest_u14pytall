@@ -21,7 +21,8 @@ build:
     #options: "--net=host"
 
   ci:
-    - yum -y update
+    - sudo yum -y update
+    - echo $?
     - yum -y install epel-release
     - yum -y install python-pip
     - pip install -r requirements.txt
