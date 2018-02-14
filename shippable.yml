@@ -5,10 +5,15 @@ python:
  
 build:
   pre_ci_boot:
-    image_name: drydock/u14pytall
-    image_tag: master
-    pull: true
-    options: "--net=host"
+    #image_name: drydock/u14pytall
+    #image_tag: master
+    #pull: true
+    #options: "--net=host"
+    
+    image_name: centos
+    image_tag: centos7
+    #pull: true
+    # options: "--net=host"
     
     #image_name: ubuntu
     #image_tag: trusty
